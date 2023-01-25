@@ -1,91 +1,104 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
 
-const inter = Inter({ subsets: ['latin'] })
+import Button from "@/components/UI/Button";
+import Link from "@/components/UI/Link";
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    const [loading, setLoading] = useState(false);
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+    function handleClick() {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    return (
+        <>
+            {/* Just HTML */}
+            <section>
+                <h2>Write clean HTML</h2>
+                <p>
+                    Prototyping an idea takes time. Why worry about styling
+                    everything? Design can come later,{" "}
+                    <b>core functionality is key to a deliverable product</b>.
+                    Using{" "}
+                    <a
+                        href="https://tailwindcss.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        TailwindCSS
+                    </a>
+                    , this project provides you a template while you figure
+                    things out.
+                </p>
+                <p>Before we had inline links, these are navigation links.</p>
+                <aside>
+                    <a
+                        href="https://hectorsosa.me"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Read more about this
+                    </a>
+                    <a
+                        href="https://github.com/ekqt/nula"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Go to GitHub
+                    </a>
+                </aside>
+                <p>These are test buttons:</p>
+                <footer>
+                    <button onClick={() => alert("Hello 👋🏼")}>Submit</button>
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </footer>
+            </section>
+            {/* Custom Components */}
+            <section>
+                <h2>Integrate your Components</h2>
+                <p>
+                    Once you are ready to style. You just need to start creating
+                    components and/or styles. Using{" "}
+                    <Link
+                        variant="external"
+                        href="https://tailwindcss.com/docs/utility-first"
+                        target="_blank"
+                    >
+                        TailwindCSS utility classes
+                    </Link>{" "}
+                    will overwrite the template styles.
+                </p>
+                <p>Before we had inline links, these are navigation links.</p>
+                <aside>
+                    <Link
+                        variant="nav"
+                        href="https://hectorsosa.me"
+                        target="_blank"
+                    >
+                        Read more about this
+                    </Link>
+                    <Link
+                        variant="nav"
+                        href="https://github.com/ekqt/nula"
+                        target="_blank"
+                    >
+                        Go to GitHub
+                    </Link>
+                </aside>
+                <p>These are custom Button components:</p>
+                <footer>
+                    <Button onClick={handleClick} loading={loading} icon>
+                        Submit
+                    </Button>
+                    <Button variant="secondary">Save</Button>
+                    <Button variant="tertiary">Cancel</Button>
+                </footer>
+            </section>
+        </>
+    );
 }

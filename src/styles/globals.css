@@ -1,0 +1,47 @@
+@import "./nula";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .container-width {
+        @apply mx-auto max-w-3xl p-6;
+    }
+}
+
+* {
+    scroll-behavior: smooth;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    @apply bg-white text-black transition-colors dark:bg-black dark:text-white;
+}
+
+main {
+    @apply grid items-center justify-center text-lg leading-relaxed;
+}
+
+main > section {
+    @apply max-w-3xl space-y-6 py-6;
+}
+
+section > h1,
+section > h2,
+section > h3,
+section > h4 {
+    @apply pt-4 text-2xl font-bold tracking-tight md:text-3xl;
+}
+
+aside {
+    @apply flex flex-col gap-3;
+}
+
+footer {
+    @apply flex flex-col gap-3 sm:flex-row;
+}

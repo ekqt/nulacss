@@ -1,20 +1,18 @@
 import cx from "@/utils/cx";
 
 type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
-    (
+    Partial<
         | {
-              variant?: "primary";
-              icon?: boolean;
-              loading?: boolean;
-              error?: boolean;
+              variant: "primary";
+              icon: boolean;
+              loading: boolean;
           }
         | {
-              variant?: "secondary" | "tertiary";
-              icon?: never;
-              loading?: boolean;
-              error?: boolean;
+              variant: "secondary" | "tertiary";
+              icon: never;
+              loading: boolean;
           }
-    );
+    >;
 
 export default function Button({
     children,

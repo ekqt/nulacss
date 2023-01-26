@@ -17,7 +17,18 @@ export default function RootLayout({
         <html lang="en">
             <head />
             <body className={`${inter.variable} font-sans`}>
-                <Navbar />
+                <Navbar
+                    links={[
+                        {
+                            href: "/",
+                            label: "Home",
+                        },
+                        {
+                            href: "/",
+                            label: "Components",
+                        },
+                    ]}
+                />
                 <main className="container-width">{children}</main>
                 <Footer
                     links={[

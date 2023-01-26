@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/UI/Button";
-import Link from "@/components/UI/Link";
+import Anchor from "@/components/UI/Anchor";
 import { useState } from "react";
 
 export default function Home() {
@@ -34,7 +34,10 @@ export default function Home() {
                     , this project provides you a template while you figure
                     things out.
                 </p>
-                <p>Before we had inline links, these are navigation links.</p>
+                <p>
+                    Before we had OOTBinline links, these are OOTB navigation
+                    links.
+                </p>
                 <aside>
                     <a
                         href="https://hectorsosa.me"
@@ -51,7 +54,7 @@ export default function Home() {
                         Go to GitHub
                     </a>
                 </aside>
-                <p>These are test buttons:</p>
+                <p>These are OOTB buttons:</p>
                 <footer>
                     <button onClick={() => alert("Hello 👋🏼")}>Submit</button>
                     <button>Save</button>
@@ -62,33 +65,36 @@ export default function Home() {
             <section>
                 <h2>Integrate your Components</h2>
                 <p>
-                    Once you are ready to style. You just need to start creating
-                    components and/or styles. Using{" "}
-                    <Link
+                    Once you are ready to style, you just need to start creating
+                    components using{" "}
+                    <Anchor
                         variant="external"
                         href="https://tailwindcss.com/docs/utility-first"
                         target="_blank"
                     >
                         TailwindCSS utility classes
-                    </Link>{" "}
-                    will overwrite the template styles.
+                    </Anchor>{" "}
+                    which will overwrite the template styles.
                 </p>
-                <p>Before we had inline links, these are navigation links.</p>
+                <p>
+                    Before we had custom inline links, these are custom
+                    navigation links.
+                </p>
                 <aside>
-                    <Link
+                    <Anchor
                         variant="nav"
                         href="https://hectorsosa.me"
                         target="_blank"
                     >
                         Read more about this
-                    </Link>
-                    <Link
+                    </Anchor>
+                    <Anchor
                         variant="nav"
                         href="https://github.com/ekqt/nula"
                         target="_blank"
                     >
                         Go to GitHub
-                    </Link>
+                    </Anchor>
                 </aside>
                 <p>These are custom Button components:</p>
                 <footer>

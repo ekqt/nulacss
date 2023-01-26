@@ -1,4 +1,4 @@
-import Link from "./UI/Link";
+import Anchor from "./UI/Anchor";
 
 type FooterProps = {
     links?: Array<{
@@ -9,23 +9,26 @@ type FooterProps = {
 
 export default function Footer({ links }: FooterProps) {
     return (
-        <footer className="mt-6 border-t border-stone-500 pb-16">
-            <div className="container-width w-full flex h-full flex-col justify-between gap-4 lg:flex-row lg:items-center">
+        <footer
+            aria-label="Footer"
+            className="mt-6 border-t border-stone-500 pb-16"
+        >
+            <div className="container-width w-full flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
                 <div aria-label="Copyright" className="text-lg font-semibold">
                     © 2022 Hector Sosa
                 </div>
-                <ul className="flex flex-col gap-3 font-light lg:flex-row lg:gap-6">
+                <div className="flex flex-col gap-3 font-light lg:flex-row lg:gap-6">
                     {links?.map(({ href, label }, index) => (
-                        <Link
+                        <Anchor
                             key={index}
                             variant="external"
                             href={href}
                             target="_blank"
                         >
                             {label}
-                        </Link>
+                        </Anchor>
                     ))}
-                </ul>
+                </div>
             </div>
         </footer>
     );

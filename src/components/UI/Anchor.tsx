@@ -1,10 +1,11 @@
 import cx from "@/utils/cx";
+import Link from "next/link";
 
-type LinkProps = React.ComponentPropsWithoutRef<"a"> & {
+type AnchorProps = React.ComponentPropsWithoutRef<"a"> & {
     variant?: "external" | "nav";
 };
 
-export default function Link({ children, variant, ...props }: LinkProps) {
+export default function Anchor({ children, variant, ...props }: AnchorProps) {
     return (
         <a
             {...props}
